@@ -24,14 +24,19 @@ public class AspireFixture : IAsyncLifetime
         _builder = await DistributedApplicationTestingBuilder
             .CreateAsync<Projects.DistributedLockPoc_AppHost>(cancellationToken);
 
-        _builder.Services.ConfigureHttpClientDefaults(opts =>
-            opts.AddStandardResilienceHandler());
-
         App = await _builder.BuildAsync(cancellationToken).WaitAsync(DefaultTimeout, cancellationToken);
+        
         await App.StartAsync(cancellationToken).WaitAsync(DefaultTimeout, cancellationToken);
 
-        // Wait until the API is healthy
-        ApiClient = App.CreateHttpClient("api");
+        await App.ResourceNotifications.WaitForResourceHealthyAsync("api", cancellationToken);
+
+        var baseAddress = App.GetEndpoint("api");
+
+        ApiClient = new HttpClient
+        {
+            BaseAddress = baseAddress,
+            Timeout = Timeout.InfiniteTimeSpan
+        };
     }
 
     public async Task DisposeAsync()

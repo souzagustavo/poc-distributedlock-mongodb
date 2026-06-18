@@ -36,6 +36,8 @@ public class CounterService(IDistributedLockProvider providerLock, IMongoCollect
 
         logger.LogInformation("Counter '{Counter}' incremented to {Value}. Releasing lock.", counterName, counter.Value);
 
+        await Task.Delay(TimeSpan.FromSeconds(Random.Shared.Next(1, 5)), ct);
+
         return counter;
     }
 

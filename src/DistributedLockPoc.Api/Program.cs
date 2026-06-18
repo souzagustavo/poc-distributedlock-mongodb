@@ -29,8 +29,12 @@ builder.Services.AddHealthChecks()
 builder.Services.AddScoped<IDistributedLockProvider>(sp =>
 {
     var db = sp.GetRequiredService<IMongoDatabase>();
-    return new MongoDistributedSynchronizationProvider(db, options => options
-        .Expiry(TimeSpan.FromSeconds(10)));
+    return new MongoDistributedSynchronizationProvider(db, options =>
+    {
+        options.Expiry(TimeSpan.FromSeconds(30));
+        // options.ExtensionCadence = Expiry / 3 Default
+        options.BusyWaitSleepTime(TimeSpan.FromMilliseconds(500), TimeSpan.FromSeconds(2));
+    });
 });
 
 builder.Services.AddScoped<ICounterService, CounterService>();
