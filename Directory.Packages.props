@@ -1,0 +1,54 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
+  <!-- ── Aspire ─────────────────────────────────────────────────────────── -->
+  <ItemGroup>
+    <PackageVersion Include="Aspire.Hosting.AppHost"    Version="13.4.5" />
+    <PackageVersion Include="Aspire.Hosting.MongoDB"    Version="13.4.5" />
+    <PackageVersion Include="Aspire.Hosting.Testing"    Version="13.4.5" />
+    <PackageVersion Include="Aspire.MongoDB.Driver"     Version="13.4.5" />
+  </ItemGroup>
+
+  <!-- ── Distributed Lock ──────────────────────────────────────────────── -->
+  <ItemGroup>
+    <PackageVersion Include="DistributedLock.MongoDB"   Version="1.0.1" />
+  </ItemGroup>
+
+  <!-- ── MongoDB ───────────────────────────────────────────────────────── -->
+  <ItemGroup>
+    <PackageVersion Include="MongoDB.Driver"            Version="3.8.1" />
+  </ItemGroup>
+
+  <!-- ── OpenAPI / Scalar ──────────────────────────────────────────────── -->
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0" />
+    <PackageVersion Include="Scalar.AspNetCore"            Version="2.11.3" />
+  </ItemGroup>
+
+  <!-- ── OpenTelemetry ─────────────────────────────────────────────────── -->
+  <ItemGroup>
+    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol"  Version="1.16.0" />
+    <PackageVersion Include="OpenTelemetry.Extensions.Hosting"              Version="1.16.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore"      Version="1.15.2" />
+	<PackageVersion Include="OpenTelemetry.Instrumentation.Http"            Version="1.15.1" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime"         Version="1.15.1" />
+  </ItemGroup>
+
+  <!-- ── Resilience / Service Discovery ───────────────────────────────── -->
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.Extensions.Http.Resilience"  Version="10.7.0" />
+    <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.7.0" />
+  </ItemGroup>
+
+  <!-- ── Testing ───────────────────────────────────────────────────────── -->
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing"   Version="10.0.0" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk"             Version="17.14.1" />
+    <PackageVersion Include="FluentAssertions"                    Version="8.10.0" />
+    <PackageVersion Include="xunit"                              Version="2.9.3" />
+    <PackageVersion Include="xunit.runner.visualstudio"          Version="3.1.5" />
+  </ItemGroup>
+
+</Project>
