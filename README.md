@@ -1,6 +1,6 @@
 # Distributed Lock POC — MongoDB + .NET Aspire
 
-POC de lock distribuído usando [`DistributedLock.MongoDB`](https://github.com/madelson/DistributedLock/tree/master/src/DistributedLock.MongoDB) com .NET 9 e Aspire para orquestração do MongoDB.
+POC de lock distribuído usando [`DistributedLock.MongoDB`](https://github.com/madelson/DistributedLock/tree/master/src/DistributedLock.MongoDB) com .NET 10 e Aspire para orquestração do MongoDB.
 
 ## Stack
 
